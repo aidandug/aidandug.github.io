@@ -356,6 +356,7 @@ section p {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 60px;
     gap: 20px;
 }
 
@@ -394,6 +395,8 @@ body, html {
     z-index: 1; /* Keep it on top of content */
     opacity: 1;
     transition: opacity 0.8s ease; /* Smooth fading */
+    margin-bottom: 300px;
+    padding-bottom: 30px;
 }
 
 /* Video element styling */
@@ -505,8 +508,8 @@ header {
 }
 
 .bio-gallery img {
-    width: 350px;
-    height: 300px;
+    width: 15%;
+    height: auto;
     object-fit: cover;
     border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
