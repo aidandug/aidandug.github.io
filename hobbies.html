@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobbies</title>
+    <link rel="stylesheet" href="css/chat.css"> <!-- Linking your existing chat.css -->
+</head>
+<body>
+    <!-- Video Section -->
+    <div class="video-container">
+        <video id="top-video" autoplay muted loop>
+            <source src="/img/racing.mp4" type="video/mp4">
+        </video>
+        <!-- Mute/Unmute Button -->
+        <button id="mute-btn" class="mute-button">🔇</button>
+    </div>
+
+    <!-- Mute Notification Element -->
+    <div id="mute-notification" class="mute-notification" style="display: none;">Video Muted</div>
+
+    <!-- Rest of the Hobbies Page Content -->
+    <div class="content">
+        <h1></h1>
+    </div>
+
+    <!-- Return to Main Page Buttons -->
+    <div class="return-button top-left">
+        <a href="index.html">
+            <img src="img/8bitmazda.jpg" alt="Take me home">
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <h1>What Interests Aidan?</h1>
+    </header>
+
+    <!-- Hobbies Overview -->
+    <section id="hobbies">
+        <!-- Racing -->
+        <div class="hobby" id="racing">
+            <h2>Racing</h2>
+            <p>I have always had a passion for race cars, captivated by their speed and 
+                engineering excellence. Attending prestigious racing events like Formula 1 
+                and the World Endurance Championship has fueled my enthusiasm even more. 
+                The adrenaline rush of watching these incredible machines tear down the track, 
+                along with the thrill of being part of the crowd, has deepened my appreciation 
+                for the sport and the technology behind these high-performance vehicles.
+
+            </p>
+            <div class="hobby-gallery">
+                <img src="img/race1.jpg" alt="race Image 1">
+                <img src="img/race2.jpg" alt="race Image 2">
+                <img src="img/race3.jpg" alt="race Image 3">
+                <img src="img/race4.jpg" alt="race Image 4">
+                <img src="img/race5.jpg" alt="race Image 5">
+                <img src="img/race6.jpg" alt="race Image 6">
+                <img src="img/race7.jpg" alt="race Image 7">
+                <img src="img/race8.jpg" alt="race Image 8">
+                <img src="img/race9.jpg" alt="race Image 9">
+                <img src="img/race11.jpg" alt="race Image 11">
+
+            </div>
+        </div>
+
+        <!-- RC cars and planes -->
+        <div class="hobby" id="rc-cars-planes">
+            <h2>RC Cars and RC Planes</h2>
+            <p>In addition to full-scale racing, I have a strong interest in remote-controlled 
+                (RC) cars. Building and customizing my own RC vehicles allows me to apply my 
+                engineering skills in a fun and creative way. Whether it’s racing them on the 
+                track or modifying them for improved performance, this hobby combines my love 
+                for cars with hands-on experience in mechanics and design.
+
+        <div class="hobby-gallery">
+                <img src="img/rccp1.jpg" alt="RC cars and planes 1">
+                
+            </div>
+        </div>
+
+        <!-- France Trip -->
+        <div class="hobby" id="machining">
+            <h2>Machining</h2>
+            <p>I’ve also been dedicated to honing my skills through machining classes. 
+                These courses have equipped me with practical knowledge of various machining 
+                techniques, from CNC operation to manual lathe work. Working with different 
+                materials and tools has not only enhanced my technical abilities but has also 
+                deepened my understanding of manufacturing processes. This experience complements 
+                my automotive interests, allowing me to appreciate the craftsmanship that goes 
+                into building and modifying vehicles.
+
+            </p>
+            <div class="hobby-gallery">
+                <img src="img/machine1.jpg" alt="machine Image 1">
+                <img src="img/machine2.jpg" alt="machine Image 2">
+                <img src="img/machine3.jpg" alt="machine Image 3">
+                <img src="img/machine4.jpg" alt="machine Image 4">
+                <img src="img/machine5.jpg" alt="machine Image 5">
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+    // Scroll and Mute Script
+    const video = document.getElementById('top-video');
+    const muteBtn = document.getElementById('mute-btn');
+    const muteNotification = document.getElementById('mute-notification');
+
+    // Toggle video mute/unmute
+    muteBtn.addEventListener('click', function() {
+        if (video.muted) {
+            video.muted = false;
+            muteBtn.textContent = '🔊'; // Change to speaker icon
+            muteNotification.style.display = 'none'; // Hide notification
+        } else {
+            video.muted = true;
+            muteBtn.textContent = '🔇'; // Change back to mute icon
+            muteNotification.style.display = 'none'; // Hide notification
+        }
+    });
+
+    // Video fade out on scroll
+    const videoContainer = document.querySelector('.video-container');
+    window.addEventListener('scroll', function() {
+        console.log('Scroll position:', window.scrollY); // Debugging line
+        if (window.scrollY > 100) {
+            videoContainer.classList.add('hidden');
+            video.muted = true; // Mute video when it disappears
+            muteNotification.style.display = 'block'; // Show notification
+        } else {
+            videoContainer.classList.remove('hidden');
+            video.muted = false; // Unmute video when it reappears
+            muteNotification.style.display = 'none'; // Hide notification
+        }
+    });
+</script>
+
+
+</body>
+</html>
